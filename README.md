@@ -1,4 +1,4 @@
-# yelp-similar-members
+# temp title
 self version of the Summer 2020 CS598 final project
 
 ## Installations
