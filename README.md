@@ -73,3 +73,7 @@ In this final project,
 * as planned, I explored user entity to find an insightful use case 
 * beyond the mileage, I discovered two insightful use cases, which ideally would benefit business strategies (use case 1) and restaurant owner (use case2) 
 * for engineering contributions, the scheme I developed above could benefit modelers as well, as it can be swiftly utilized to conduct bulk experiments to improve model quality, and is extensible to support more models. 
+
+Interesting findings
+From case 1, one interesting finding is who tends to give average high-star reviews: it seems that “funny” and “useful” in both “votes” and “reviews” are quite negatively contributing to high-star reviews whereas “cool” is a positive driver. In addition, those who have a larger fans and friends circle also tend to give higher ratings. 
+For case 2, it tried to generate broader candidate pool of the Yelp users that a restaurant owner would like their Ads to reach out to. Besides conditional filtering to locate exact-matched seed members, Nearest Neighbors of these seed members and then re-rank based on the distance allows us to find more similar users. By manual check the raw features of the expanded users, I found the expanded Yelp users to be of high quality. This can be further validated if integrated this candidate generation as the upstream of a recommender system. 
