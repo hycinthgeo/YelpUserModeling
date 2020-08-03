@@ -1,0 +1,10 @@
+{
+  "algorithm": "regression:logsticRegression",
+  "label": "average_stars>=4",
+  "feature-exclude-list": "",
+  "train-test split": "0.2",
+  "train-test split random state": 42,
+  "K-fold cross-validation": 5,
+  "scoring": "roc_auc",
+  "if_tuning": "False"
+}

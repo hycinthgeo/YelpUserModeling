@@ -1,0 +1,14 @@
+{
+	"home directory": "",
+	"data path for user table" : "yelp_dataset_challenge_academic_dataset/yelp_academic_dataset_user.json",
+	"transformer path": "configs/transformer-default.json",
+	"all transformed data":"results/allData.csv",
+	"train-test split": "0.2",
+	"train-test split random state": 42,
+	"train data": "results/trainData_MinMaxScaler.csv" ,
+	"test data": "results/testData_MinMaxScaler.csv",
+	"modelConfig path": "configs/modelConfig-case1-default.json",
+	"modelArtefact path": "artefacts/model-case1-default",
+	"result path": "results/",
+	"log path": "logs/"
+}

@@ -1,0 +1,7 @@
+RAW_COLNAME_ELITE = "elite"
+RAW_COLNAME_FRIENDS = "friends"
+RAW_COLNAME_COMPLIMENTS = "compliments"
+RAW_COLNAME_VOTES = "votes"
+RAW_COLNAME_REVIEW_COUNT = "review_count"
+RAW_COLNAME_FANS = "fans"
+RAW_COLNAME_FRIENDS = "friends"
