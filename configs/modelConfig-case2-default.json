@@ -1,0 +1,7 @@
+{
+  "yelping_since_year": [2010, 2014],
+  "average_stars": [4, 5],
+  "elite_year_count": [0, 2], 
+  "friends_count": [3, 9999],
+  "target_num_users": 100,
+}

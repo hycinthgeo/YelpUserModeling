@@ -7,6 +7,7 @@ import modeling as train
 import prediction as predict
 import logging
 import pandas as pd
+import similar_user_expansion as sim
 
 
 def main():
@@ -40,6 +41,10 @@ def main():
 	if app_mode in ["prediction", "full"]:
 		logger.info("="*5 + "APPLICATION MODE = PREDICTION (STARTED)" + "="*5 )
 		App.run_model_prediction(logger, io_config)
+
+	if app_mode in ["similar-user", "full"]:
+		logger.info("="*5 + "APPLICATION MODE = PREDICTION (STARTED)" + "="*5 )
+		App.run_similar_user_expansion(logger, io_config)
 
 	# print out summary with file path and purpose of output files
 
@@ -97,6 +102,10 @@ class myapp():
 	def run_model_prediction(self, logger, io_config):
 		Predict = predict.modelPrediction(logger, io_config)
 		Predict.prediction()
+
+	def run_similar_user_expansion(self, logger, io_config):
+		Sim = sim.similarUserExpansion(logger, io_config)
+		Sim.filter_and_expand()
 
 
 

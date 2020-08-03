@@ -10,6 +10,12 @@
 	"modelConfig path": "configs/modelConfig-case1-default.json",
 	"modelArtefact path": "artefacts/model-case1-default",
 	"featureNames path": "results/feature_names.txt",
+
+	"modelConfig-case2 path":"configs/modelConfig-case2-default.json",
+	"all transformed data-case2":"results/allData-subset.csv",
+	"data path for user table-case2" : "yelp_dataset_challenge_academic_dataset/yelp_academic_dataset_user-subset.csv",
+	"output path for user list-case2": "results/recommended_user_list.csv",
+
 	"result path": "results/",
 	"log path": "logs/"
 }
