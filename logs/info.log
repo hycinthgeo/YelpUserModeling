@@ -1,154 +1,154 @@
-2020-08-02 23:42:10,344 =====APPLICATION MODE = PRE-PROCESSING (STARTED)=====
-2020-08-02 23:42:10,344 =====APPLICATION MODE = PRE-PROCESSING (STARTED)=====
-2020-08-02 23:42:10,344 Processing user table
-2020-08-02 23:42:10,350 Prepare to load 2 data sources
-2020-08-02 23:42:10,350 ==========Step 1: Loading Data & Get Basic Info (Started) ==========
-2020-08-02 23:42:12,375 Scanning raw inputs: 200000 rows and 11 columns 
-2020-08-02 23:42:12,375 Columns are average_stars, compliments, elite, fans, friends, name, review_count, type, user_id, votes, yelping_since
-2020-08-02 23:42:12,375          INFO: raw column name |      #non-null value |      %non-null value
-2020-08-02 23:42:12,375 ----------------------------------------------------------------------------------------------------
-2020-08-02 23:42:12,430                  average_stars |               200000 |               100.0
-2020-08-02 23:42:12,506                    compliments |                83684 |                41.8
-2020-08-02 23:42:12,558                          elite |                15817 |                 7.9
-2020-08-02 23:42:12,559                           fans |                15817 |                 7.9
-2020-08-02 23:42:12,633                        friends |                97587 |                48.8
-2020-08-02 23:42:12,697                           name |               200000 |               100.0
-2020-08-02 23:42:12,698                   review_count |               200000 |               100.0
-2020-08-02 23:42:12,762                           type |               200000 |               100.0
-2020-08-02 23:42:12,824                        user_id |               200000 |               100.0
-2020-08-02 23:42:12,925                          votes |               200000 |               100.0
-2020-08-02 23:42:12,988                  yelping_since |               200000 |               100.0
-2020-08-02 23:42:13,191 SUMMARY
-2020-08-02 23:42:13,191                                 num of elite users = 15817
-2020-08-02 23:42:13,191                       number of users with friends = 97587
-2020-08-02 23:42:13,191                   number of users with compliments = 83684
-2020-08-02 23:42:13,191 ==========Step 1: Loading Data & Get Basic Info (Completed)==========
-2020-08-02 23:42:13,226 Loading data from the following file, data source = yelp_dataset_challenge_academic_dataset/yelp_academic_dataset_user.json
-2020-08-02 23:42:13,226 Scanning raw columns to output quantile stats
-2020-08-02 23:42:14,633             bucketized feature |        total records |     non-zero records |   % non-zero records
-2020-08-02 23:42:14,633 ----------------------------------------------------------------------------------------------------
-2020-08-02 23:42:14,637           votes-funny_bucket_0 |               200000 |                78826 |            39.413
-2020-08-02 23:42:14,639           votes-funny_bucket_1 |               200000 |                27772 |            13.886
-2020-08-02 23:42:14,641           votes-funny_bucket_2 |               200000 |                31918 |            15.959
-2020-08-02 23:42:14,642           votes-funny_bucket_3 |               200000 |                18416 |             9.208
-2020-08-02 23:42:14,644           votes-funny_bucket_4 |               200000 |                33151 |            16.576
-2020-08-02 23:42:14,645           votes-funny_bucket_5 |               200000 |                 9917 |             4.958
-2020-08-02 23:42:14,647          votes-useful_bucket_0 |               200000 |                33095 |            16.547
-2020-08-02 23:42:14,648          votes-useful_bucket_1 |               200000 |                21727 |            10.864
-2020-08-02 23:42:14,650          votes-useful_bucket_2 |               200000 |                35709 |            17.855
-2020-08-02 23:42:14,652          votes-useful_bucket_3 |               200000 |                27058 |            13.529
-2020-08-02 23:42:14,655          votes-useful_bucket_4 |               200000 |                61530 |            30.765
-2020-08-02 23:42:14,656          votes-useful_bucket_5 |               200000 |                20881 |            10.441
-2020-08-02 23:42:14,660            votes-cool_bucket_0 |               200000 |                73444 |            36.722
-2020-08-02 23:42:14,661            votes-cool_bucket_1 |               200000 |                28886 |            14.443
-2020-08-02 23:42:14,663            votes-cool_bucket_2 |               200000 |                33750 |            16.875
-2020-08-02 23:42:14,665            votes-cool_bucket_3 |               200000 |                19398 |             9.699
-2020-08-02 23:42:14,667            votes-cool_bucket_4 |               200000 |                33762 |            16.881
-2020-08-02 23:42:14,668            votes-cool_bucket_5 |               200000 |                10760 |             5.380
-2020-08-02 23:42:15,128             bucketized feature |        total records |     non-zero records |   % non-zero records
-2020-08-02 23:42:15,128 ----------------------------------------------------------------------------------------------------
-2020-08-02 23:42:15,146     compliments-funny_bucket_0 |               200000 |               167747 |            83.874
-2020-08-02 23:42:15,148     compliments-funny_bucket_1 |               200000 |                13339 |             6.670
-2020-08-02 23:42:15,150     compliments-funny_bucket_2 |               200000 |                 8991 |             4.495
-2020-08-02 23:42:15,151     compliments-funny_bucket_3 |               200000 |                 3797 |             1.899
-2020-08-02 23:42:15,152     compliments-funny_bucket_4 |               200000 |                 4171 |             2.086
-2020-08-02 23:42:15,154     compliments-funny_bucket_5 |               200000 |                 1955 |             0.978
-2020-08-02 23:42:15,167      compliments-cool_bucket_0 |               200000 |               151758 |            75.879
-2020-08-02 23:42:15,170      compliments-cool_bucket_1 |               200000 |                17279 |             8.639
-2020-08-02 23:42:15,172      compliments-cool_bucket_2 |               200000 |                12692 |             6.346
-2020-08-02 23:42:15,174      compliments-cool_bucket_3 |               200000 |                 6183 |             3.091
-2020-08-02 23:42:15,176      compliments-cool_bucket_4 |               200000 |                 8204 |             4.102
-2020-08-02 23:42:15,177      compliments-cool_bucket_5 |               200000 |                 3884 |             1.942
-2020-08-02 23:42:15,191    compliments-writer_bucket_0 |               200000 |               163574 |            81.787
-2020-08-02 23:42:15,193    compliments-writer_bucket_1 |               200000 |                14743 |             7.372
-2020-08-02 23:42:15,196    compliments-writer_bucket_2 |               200000 |                10157 |             5.079
-2020-08-02 23:42:15,197    compliments-writer_bucket_3 |               200000 |                 4681 |             2.341
-2020-08-02 23:42:15,199    compliments-writer_bucket_4 |               200000 |                 5152 |             2.576
-2020-08-02 23:42:15,200    compliments-writer_bucket_5 |               200000 |                 1693 |             0.847
-2020-08-02 23:42:15,216    compliments-photos_bucket_0 |               200000 |               181611 |            90.805
-2020-08-02 23:42:15,218    compliments-photos_bucket_1 |               200000 |                 8168 |             4.084
-2020-08-02 23:42:15,219    compliments-photos_bucket_2 |               200000 |                 5348 |             2.674
-2020-08-02 23:42:15,221    compliments-photos_bucket_3 |               200000 |                 2020 |             1.010
-2020-08-02 23:42:15,222    compliments-photos_bucket_4 |               200000 |                 2126 |             1.063
-2020-08-02 23:42:15,223    compliments-photos_bucket_5 |               200000 |                  727 |             0.363
-2020-08-02 23:42:15,238      compliments-more_bucket_0 |               200000 |               172174 |            86.087
-2020-08-02 23:42:15,241      compliments-more_bucket_1 |               200000 |                13692 |             6.846
-2020-08-02 23:42:15,242      compliments-more_bucket_2 |               200000 |                 8860 |             4.430
-2020-08-02 23:42:15,244      compliments-more_bucket_3 |               200000 |                 3011 |             1.506
-2020-08-02 23:42:15,245      compliments-more_bucket_4 |               200000 |                 1882 |             0.941
-2020-08-02 23:42:15,246      compliments-more_bucket_5 |               200000 |                  381 |             0.191
-2020-08-02 23:42:15,259     compliments-plain_bucket_0 |               200000 |               150344 |            75.172
-2020-08-02 23:42:15,262     compliments-plain_bucket_1 |               200000 |                19048 |             9.524
-2020-08-02 23:42:15,264     compliments-plain_bucket_2 |               200000 |                13804 |             6.902
-2020-08-02 23:42:15,266     compliments-plain_bucket_3 |               200000 |                 6029 |             3.014
-2020-08-02 23:42:15,267     compliments-plain_bucket_4 |               200000 |                 7366 |             3.683
-2020-08-02 23:42:15,269     compliments-plain_bucket_5 |               200000 |                 3409 |             1.704
-2020-08-02 23:42:15,282      compliments-note_bucket_0 |               200000 |               155185 |            77.593
-2020-08-02 23:42:15,285      compliments-note_bucket_1 |               200000 |                18590 |             9.295
-2020-08-02 23:42:15,287      compliments-note_bucket_2 |               200000 |                12767 |             6.383
-2020-08-02 23:42:15,289      compliments-note_bucket_3 |               200000 |                 5512 |             2.756
-2020-08-02 23:42:15,290      compliments-note_bucket_4 |               200000 |                 5946 |             2.973
-2020-08-02 23:42:15,292      compliments-note_bucket_5 |               200000 |                 2000 |             1.000
-2020-08-02 23:42:15,306       compliments-hot_bucket_0 |               200000 |               165518 |            82.759
-2020-08-02 23:42:15,308       compliments-hot_bucket_1 |               200000 |                11975 |             5.987
-2020-08-02 23:42:15,310       compliments-hot_bucket_2 |               200000 |                 9332 |             4.666
-2020-08-02 23:42:15,312       compliments-hot_bucket_3 |               200000 |                 4497 |             2.248
-2020-08-02 23:42:15,313       compliments-hot_bucket_4 |               200000 |                 5865 |             2.933
-2020-08-02 23:42:15,314       compliments-hot_bucket_5 |               200000 |                 2813 |             1.407
-2020-08-02 23:42:15,331      compliments-cute_bucket_0 |               200000 |               184998 |            92.499
-2020-08-02 23:42:15,332      compliments-cute_bucket_1 |               200000 |                 7404 |             3.702
-2020-08-02 23:42:15,334      compliments-cute_bucket_2 |               200000 |                 4262 |             2.131
-2020-08-02 23:42:15,335      compliments-cute_bucket_3 |               200000 |                 1531 |             0.765
-2020-08-02 23:42:15,336      compliments-cute_bucket_4 |               200000 |                 1377 |             0.689
-2020-08-02 23:42:15,337      compliments-cute_bucket_5 |               200000 |                  428 |             0.214
-2020-08-02 23:42:15,355      compliments-list_bucket_0 |               200000 |               192100 |            96.050
-2020-08-02 23:42:15,356      compliments-list_bucket_1 |               200000 |                 3489 |             1.744
-2020-08-02 23:42:15,358      compliments-list_bucket_2 |               200000 |                 2341 |             1.171
-2020-08-02 23:42:15,359      compliments-list_bucket_3 |               200000 |                 1037 |             0.518
-2020-08-02 23:42:15,359      compliments-list_bucket_4 |               200000 |                  883 |             0.442
-2020-08-02 23:42:15,360      compliments-list_bucket_5 |               200000 |                  150 |             0.075
-2020-08-02 23:42:15,376   compliments-profile_bucket_0 |               200000 |               187637 |            93.819
-2020-08-02 23:42:15,378   compliments-profile_bucket_1 |               200000 |                 6358 |             3.179
-2020-08-02 23:42:15,379   compliments-profile_bucket_2 |               200000 |                 3566 |             1.783
-2020-08-02 23:42:15,380   compliments-profile_bucket_3 |               200000 |                 1117 |             0.558
-2020-08-02 23:42:15,381   compliments-profile_bucket_4 |               200000 |                 1024 |             0.512
-2020-08-02 23:42:15,382   compliments-profile_bucket_5 |               200000 |                  298 |             0.149
-2020-08-02 23:42:15,384 Present output dataframe size =(200000 x 86)
-2020-08-02 23:42:15,935             bucketized feature |        total records |     non-zero records |   % non-zero records
-2020-08-02 23:42:15,935 ----------------------------------------------------------------------------------------------------
-2020-08-02 23:42:15,936                 elite_bucket_0 |               200000 |                   85 |             0.043
-2020-08-02 23:42:15,937                 elite_bucket_1 |               200000 |                  519 |             0.260
-2020-08-02 23:42:15,938                 elite_bucket_2 |               200000 |                 1397 |             0.699
-2020-08-02 23:42:15,938                 elite_bucket_3 |               200000 |                 2123 |             1.062
-2020-08-02 23:42:15,939                 elite_bucket_4 |               200000 |                 3755 |             1.877
-2020-08-02 23:42:15,941                 elite_bucket_5 |               200000 |                 5839 |             2.920
-2020-08-02 23:42:15,942                 elite_bucket_6 |               200000 |                 7074 |             3.537
-2020-08-02 23:42:15,943                 elite_bucket_7 |               200000 |                 9066 |             4.533
-2020-08-02 23:42:15,945                 elite_bucket_8 |               200000 |                 9043 |             4.521
-2020-08-02 23:42:15,946                 elite_bucket_9 |               200000 |                 8497 |             4.248
-2020-08-02 23:42:15,948                    elite-total |               200000 |                15817 |             7.909
-2020-08-02 23:42:15,964             bucketized feature |        total records |     non-zero records |   % non-zero records
-2020-08-02 23:42:15,964 ----------------------------------------------------------------------------------------------------
-2020-08-02 23:42:15,965          review_count_bucket_0 |               200000 |                29582 |            14.791
-2020-08-02 23:42:15,967          review_count_bucket_1 |               200000 |                49830 |            24.915
-2020-08-02 23:42:15,969          review_count_bucket_2 |               200000 |                34446 |            17.223
-2020-08-02 23:42:15,971          review_count_bucket_3 |               200000 |                54981 |            27.491
-2020-08-02 23:42:15,972          review_count_bucket_4 |               200000 |                31161 |            15.581
-2020-08-02 23:42:15,988             bucketized feature |        total records |     non-zero records |   % non-zero records
-2020-08-02 23:42:15,989 ----------------------------------------------------------------------------------------------------
-2020-08-02 23:42:15,991                  fans_bucket_0 |               200000 |               147079 |            73.540
-2020-08-02 23:42:15,992                  fans_bucket_1 |               200000 |                23339 |            11.669
-2020-08-02 23:42:15,993                  fans_bucket_2 |               200000 |                29582 |            14.791
-2020-08-02 23:42:16,184             bucketized feature |        total records |     non-zero records |   % non-zero records
-2020-08-02 23:42:16,184 ----------------------------------------------------------------------------------------------------
-2020-08-02 23:42:16,187         friends_count_bucket_1 |               200000 |               126363 |            63.181
-2020-08-02 23:42:16,188         friends_count_bucket_2 |               200000 |                13345 |             6.673
-2020-08-02 23:42:16,189         friends_count_bucket_3 |               200000 |                20409 |            10.204
-2020-08-02 23:42:16,190         friends_count_bucket_4 |               200000 |                14309 |             7.154
-2020-08-02 23:42:16,191         friends_count_bucket_5 |               200000 |                19949 |             9.975
-2020-08-02 23:42:16,192         friends_count_bucket_6 |               200000 |                 5625 |             2.812
-2020-08-02 23:42:16,211 Pre-Processing Completed - writing output started, output path = results/allData.csv
-2020-08-02 23:42:16,211 Index(['temp_index', 'average_stars>=4', 'votes-funny_bucket_0',
+2020-08-03 01:31:35,974 =====APPLICATION MODE = PRE-PROCESSING (STARTED)=====
+2020-08-03 01:31:35,975 =====APPLICATION MODE = PRE-PROCESSING (STARTED)=====
+2020-08-03 01:31:35,975 Processing user table
+2020-08-03 01:31:35,981 Prepare to load 2 data sources
+2020-08-03 01:31:35,981 ==========Step 1: Loading Data & Get Basic Info (Started) ==========
+2020-08-03 01:31:38,004 Scanning raw inputs: 200000 rows and 11 columns 
+2020-08-03 01:31:38,004 Columns are average_stars, compliments, elite, fans, friends, name, review_count, type, user_id, votes, yelping_since
+2020-08-03 01:31:38,004          INFO: raw column name |      #non-null value |      %non-null value
+2020-08-03 01:31:38,004 ----------------------------------------------------------------------------------------------------
+2020-08-03 01:31:38,057                  average_stars |               200000 |               100.0
+2020-08-03 01:31:38,131                    compliments |                83684 |                41.8
+2020-08-03 01:31:38,184                          elite |                15817 |                 7.9
+2020-08-03 01:31:38,185                           fans |                15817 |                 7.9
+2020-08-03 01:31:38,258                        friends |                97587 |                48.8
+2020-08-03 01:31:38,320                           name |               200000 |               100.0
+2020-08-03 01:31:38,321                   review_count |               200000 |               100.0
+2020-08-03 01:31:38,382                           type |               200000 |               100.0
+2020-08-03 01:31:38,442                        user_id |               200000 |               100.0
+2020-08-03 01:31:38,540                          votes |               200000 |               100.0
+2020-08-03 01:31:38,602                  yelping_since |               200000 |               100.0
+2020-08-03 01:31:38,803 SUMMARY
+2020-08-03 01:31:38,803                                 num of elite users = 15817
+2020-08-03 01:31:38,803                       number of users with friends = 97587
+2020-08-03 01:31:38,803                   number of users with compliments = 83684
+2020-08-03 01:31:38,803 ==========Step 1: Loading Data & Get Basic Info (Completed)==========
+2020-08-03 01:31:38,838 Loading data from the following file, data source = yelp_dataset_challenge_academic_dataset/yelp_academic_dataset_user.json
+2020-08-03 01:31:38,838 Scanning raw columns to output quantile stats
+2020-08-03 01:31:40,243             bucketized feature |        total records |     non-zero records |   % non-zero records
+2020-08-03 01:31:40,244 ----------------------------------------------------------------------------------------------------
+2020-08-03 01:31:40,248           votes-funny_bucket_0 |               200000 |                78826 |            39.413
+2020-08-03 01:31:40,250           votes-funny_bucket_1 |               200000 |                27772 |            13.886
+2020-08-03 01:31:40,251           votes-funny_bucket_2 |               200000 |                31918 |            15.959
+2020-08-03 01:31:40,253           votes-funny_bucket_3 |               200000 |                18416 |             9.208
+2020-08-03 01:31:40,255           votes-funny_bucket_4 |               200000 |                33151 |            16.576
+2020-08-03 01:31:40,256           votes-funny_bucket_5 |               200000 |                 9917 |             4.958
+2020-08-03 01:31:40,258          votes-useful_bucket_0 |               200000 |                33095 |            16.547
+2020-08-03 01:31:40,259          votes-useful_bucket_1 |               200000 |                21727 |            10.864
+2020-08-03 01:31:40,261          votes-useful_bucket_2 |               200000 |                35709 |            17.855
+2020-08-03 01:31:40,263          votes-useful_bucket_3 |               200000 |                27058 |            13.529
+2020-08-03 01:31:40,265          votes-useful_bucket_4 |               200000 |                61530 |            30.765
+2020-08-03 01:31:40,267          votes-useful_bucket_5 |               200000 |                20881 |            10.441
+2020-08-03 01:31:40,270            votes-cool_bucket_0 |               200000 |                73444 |            36.722
+2020-08-03 01:31:40,272            votes-cool_bucket_1 |               200000 |                28886 |            14.443
+2020-08-03 01:31:40,274            votes-cool_bucket_2 |               200000 |                33750 |            16.875
+2020-08-03 01:31:40,275            votes-cool_bucket_3 |               200000 |                19398 |             9.699
+2020-08-03 01:31:40,277            votes-cool_bucket_4 |               200000 |                33762 |            16.881
+2020-08-03 01:31:40,278            votes-cool_bucket_5 |               200000 |                10760 |             5.380
+2020-08-03 01:31:40,738             bucketized feature |        total records |     non-zero records |   % non-zero records
+2020-08-03 01:31:40,738 ----------------------------------------------------------------------------------------------------
+2020-08-03 01:31:40,757     compliments-funny_bucket_0 |               200000 |               167747 |            83.874
+2020-08-03 01:31:40,759     compliments-funny_bucket_1 |               200000 |                13339 |             6.670
+2020-08-03 01:31:40,761     compliments-funny_bucket_2 |               200000 |                 8991 |             4.495
+2020-08-03 01:31:40,762     compliments-funny_bucket_3 |               200000 |                 3797 |             1.899
+2020-08-03 01:31:40,764     compliments-funny_bucket_4 |               200000 |                 4171 |             2.086
+2020-08-03 01:31:40,765     compliments-funny_bucket_5 |               200000 |                 1955 |             0.978
+2020-08-03 01:31:40,779      compliments-cool_bucket_0 |               200000 |               151758 |            75.879
+2020-08-03 01:31:40,781      compliments-cool_bucket_1 |               200000 |                17279 |             8.639
+2020-08-03 01:31:40,783      compliments-cool_bucket_2 |               200000 |                12692 |             6.346
+2020-08-03 01:31:40,785      compliments-cool_bucket_3 |               200000 |                 6183 |             3.091
+2020-08-03 01:31:40,787      compliments-cool_bucket_4 |               200000 |                 8204 |             4.102
+2020-08-03 01:31:40,788      compliments-cool_bucket_5 |               200000 |                 3884 |             1.942
+2020-08-03 01:31:40,802    compliments-writer_bucket_0 |               200000 |               163574 |            81.787
+2020-08-03 01:31:40,805    compliments-writer_bucket_1 |               200000 |                14743 |             7.372
+2020-08-03 01:31:40,807    compliments-writer_bucket_2 |               200000 |                10157 |             5.079
+2020-08-03 01:31:40,809    compliments-writer_bucket_3 |               200000 |                 4681 |             2.341
+2020-08-03 01:31:40,810    compliments-writer_bucket_4 |               200000 |                 5152 |             2.576
+2020-08-03 01:31:40,811    compliments-writer_bucket_5 |               200000 |                 1693 |             0.847
+2020-08-03 01:31:40,827    compliments-photos_bucket_0 |               200000 |               181611 |            90.805
+2020-08-03 01:31:40,829    compliments-photos_bucket_1 |               200000 |                 8168 |             4.084
+2020-08-03 01:31:40,831    compliments-photos_bucket_2 |               200000 |                 5348 |             2.674
+2020-08-03 01:31:40,832    compliments-photos_bucket_3 |               200000 |                 2020 |             1.010
+2020-08-03 01:31:40,833    compliments-photos_bucket_4 |               200000 |                 2126 |             1.063
+2020-08-03 01:31:40,834    compliments-photos_bucket_5 |               200000 |                  727 |             0.363
+2020-08-03 01:31:40,849      compliments-more_bucket_0 |               200000 |               172174 |            86.087
+2020-08-03 01:31:40,851      compliments-more_bucket_1 |               200000 |                13692 |             6.846
+2020-08-03 01:31:40,853      compliments-more_bucket_2 |               200000 |                 8860 |             4.430
+2020-08-03 01:31:40,855      compliments-more_bucket_3 |               200000 |                 3011 |             1.506
+2020-08-03 01:31:40,856      compliments-more_bucket_4 |               200000 |                 1882 |             0.941
+2020-08-03 01:31:40,857      compliments-more_bucket_5 |               200000 |                  381 |             0.191
+2020-08-03 01:31:40,870     compliments-plain_bucket_0 |               200000 |               150344 |            75.172
+2020-08-03 01:31:40,873     compliments-plain_bucket_1 |               200000 |                19048 |             9.524
+2020-08-03 01:31:40,875     compliments-plain_bucket_2 |               200000 |                13804 |             6.902
+2020-08-03 01:31:40,877     compliments-plain_bucket_3 |               200000 |                 6029 |             3.014
+2020-08-03 01:31:40,879     compliments-plain_bucket_4 |               200000 |                 7366 |             3.683
+2020-08-03 01:31:40,880     compliments-plain_bucket_5 |               200000 |                 3409 |             1.704
+2020-08-03 01:31:40,894      compliments-note_bucket_0 |               200000 |               155185 |            77.593
+2020-08-03 01:31:40,896      compliments-note_bucket_1 |               200000 |                18590 |             9.295
+2020-08-03 01:31:40,898      compliments-note_bucket_2 |               200000 |                12767 |             6.383
+2020-08-03 01:31:40,900      compliments-note_bucket_3 |               200000 |                 5512 |             2.756
+2020-08-03 01:31:40,902      compliments-note_bucket_4 |               200000 |                 5946 |             2.973
+2020-08-03 01:31:40,903      compliments-note_bucket_5 |               200000 |                 2000 |             1.000
+2020-08-03 01:31:40,917       compliments-hot_bucket_0 |               200000 |               165518 |            82.759
+2020-08-03 01:31:40,920       compliments-hot_bucket_1 |               200000 |                11975 |             5.987
+2020-08-03 01:31:40,922       compliments-hot_bucket_2 |               200000 |                 9332 |             4.666
+2020-08-03 01:31:40,923       compliments-hot_bucket_3 |               200000 |                 4497 |             2.248
+2020-08-03 01:31:40,925       compliments-hot_bucket_4 |               200000 |                 5865 |             2.933
+2020-08-03 01:31:40,926       compliments-hot_bucket_5 |               200000 |                 2813 |             1.407
+2020-08-03 01:31:40,942      compliments-cute_bucket_0 |               200000 |               184998 |            92.499
+2020-08-03 01:31:40,944      compliments-cute_bucket_1 |               200000 |                 7404 |             3.702
+2020-08-03 01:31:40,945      compliments-cute_bucket_2 |               200000 |                 4262 |             2.131
+2020-08-03 01:31:40,946      compliments-cute_bucket_3 |               200000 |                 1531 |             0.765
+2020-08-03 01:31:40,948      compliments-cute_bucket_4 |               200000 |                 1377 |             0.689
+2020-08-03 01:31:40,948      compliments-cute_bucket_5 |               200000 |                  428 |             0.214
+2020-08-03 01:31:40,966      compliments-list_bucket_0 |               200000 |               192100 |            96.050
+2020-08-03 01:31:40,968      compliments-list_bucket_1 |               200000 |                 3489 |             1.744
+2020-08-03 01:31:40,969      compliments-list_bucket_2 |               200000 |                 2341 |             1.171
+2020-08-03 01:31:40,970      compliments-list_bucket_3 |               200000 |                 1037 |             0.518
+2020-08-03 01:31:40,971      compliments-list_bucket_4 |               200000 |                  883 |             0.442
+2020-08-03 01:31:40,972      compliments-list_bucket_5 |               200000 |                  150 |             0.075
+2020-08-03 01:31:40,988   compliments-profile_bucket_0 |               200000 |               187637 |            93.819
+2020-08-03 01:31:40,990   compliments-profile_bucket_1 |               200000 |                 6358 |             3.179
+2020-08-03 01:31:40,991   compliments-profile_bucket_2 |               200000 |                 3566 |             1.783
+2020-08-03 01:31:40,992   compliments-profile_bucket_3 |               200000 |                 1117 |             0.558
+2020-08-03 01:31:40,993   compliments-profile_bucket_4 |               200000 |                 1024 |             0.512
+2020-08-03 01:31:40,994   compliments-profile_bucket_5 |               200000 |                  298 |             0.149
+2020-08-03 01:31:40,996 Present output dataframe size =(200000 x 86)
+2020-08-03 01:31:41,553             bucketized feature |        total records |     non-zero records |   % non-zero records
+2020-08-03 01:31:41,553 ----------------------------------------------------------------------------------------------------
+2020-08-03 01:31:41,554                 elite_bucket_0 |               200000 |                   85 |             0.043
+2020-08-03 01:31:41,555                 elite_bucket_1 |               200000 |                  519 |             0.260
+2020-08-03 01:31:41,556                 elite_bucket_2 |               200000 |                 1397 |             0.699
+2020-08-03 01:31:41,557                 elite_bucket_3 |               200000 |                 2123 |             1.062
+2020-08-03 01:31:41,558                 elite_bucket_4 |               200000 |                 3755 |             1.877
+2020-08-03 01:31:41,559                 elite_bucket_5 |               200000 |                 5839 |             2.920
+2020-08-03 01:31:41,560                 elite_bucket_6 |               200000 |                 7074 |             3.537
+2020-08-03 01:31:41,561                 elite_bucket_7 |               200000 |                 9066 |             4.533
+2020-08-03 01:31:41,563                 elite_bucket_8 |               200000 |                 9043 |             4.521
+2020-08-03 01:31:41,564                 elite_bucket_9 |               200000 |                 8497 |             4.248
+2020-08-03 01:31:41,566                    elite-total |               200000 |                15817 |             7.909
+2020-08-03 01:31:41,581             bucketized feature |        total records |     non-zero records |   % non-zero records
+2020-08-03 01:31:41,582 ----------------------------------------------------------------------------------------------------
+2020-08-03 01:31:41,583          review_count_bucket_0 |               200000 |                29582 |            14.791
+2020-08-03 01:31:41,585          review_count_bucket_1 |               200000 |                49830 |            24.915
+2020-08-03 01:31:41,586          review_count_bucket_2 |               200000 |                34446 |            17.223
+2020-08-03 01:31:41,588          review_count_bucket_3 |               200000 |                54981 |            27.491
+2020-08-03 01:31:41,589          review_count_bucket_4 |               200000 |                31161 |            15.581
+2020-08-03 01:31:41,606             bucketized feature |        total records |     non-zero records |   % non-zero records
+2020-08-03 01:31:41,606 ----------------------------------------------------------------------------------------------------
+2020-08-03 01:31:41,608                  fans_bucket_0 |               200000 |               147079 |            73.540
+2020-08-03 01:31:41,610                  fans_bucket_1 |               200000 |                23339 |            11.669
+2020-08-03 01:31:41,611                  fans_bucket_2 |               200000 |                29582 |            14.791
+2020-08-03 01:31:41,801             bucketized feature |        total records |     non-zero records |   % non-zero records
+2020-08-03 01:31:41,801 ----------------------------------------------------------------------------------------------------
+2020-08-03 01:31:41,804         friends_count_bucket_1 |               200000 |               126363 |            63.181
+2020-08-03 01:31:41,805         friends_count_bucket_2 |               200000 |                13345 |             6.673
+2020-08-03 01:31:41,806         friends_count_bucket_3 |               200000 |                20409 |            10.204
+2020-08-03 01:31:41,807         friends_count_bucket_4 |               200000 |                14309 |             7.154
+2020-08-03 01:31:41,808         friends_count_bucket_5 |               200000 |                19949 |             9.975
+2020-08-03 01:31:41,809         friends_count_bucket_6 |               200000 |                 5625 |             2.812
+2020-08-03 01:31:41,828 Pre-Processing Completed - writing output started, output path = results/allData.csv
+2020-08-03 01:31:41,828 Index(['temp_index', 'average_stars>=4', 'votes-funny_bucket_0',
        'votes-funny_bucket_1', 'votes-funny_bucket_2', 'votes-funny_bucket_3',
        'votes-funny_bucket_4', 'votes-funny_bucket_5', 'votes-useful_bucket_0',
        'votes-useful_bucket_1',
@@ -158,194 +158,194 @@
        'friends_count_bucket_3', 'friends_count_bucket_4',
        'friends_count_bucket_5', 'friends_count_bucket_6'],
       dtype='object', length=111)
-2020-08-02 23:42:16,232                      term name    number of buckets
-2020-08-02 23:42:16,307               average_stars>=4,                    1
-2020-08-02 23:42:16,307                    votes-funny,                    6
-2020-08-02 23:42:16,307                   votes-useful,                    6
-2020-08-02 23:42:16,308                     votes-cool,                    6
-2020-08-02 23:42:16,308              compliments-funny,                    6
-2020-08-02 23:42:16,308               compliments-cool,                    6
-2020-08-02 23:42:16,308             compliments-writer,                    6
-2020-08-02 23:42:16,308             compliments-photos,                    6
-2020-08-02 23:42:16,308               compliments-more,                    6
-2020-08-02 23:42:16,308              compliments-plain,                    6
-2020-08-02 23:42:16,308               compliments-note,                    6
-2020-08-02 23:42:16,308                compliments-hot,                    6
-2020-08-02 23:42:16,308               compliments-cute,                    6
-2020-08-02 23:42:16,308               compliments-list,                    6
-2020-08-02 23:42:16,308            compliments-profile,                    6
-2020-08-02 23:42:16,308                          elite,                    1
-2020-08-02 23:42:16,308                   review_count,                    5
-2020-08-02 23:42:16,308                           fans,                    3
-2020-08-02 23:42:16,308                  friends_count,                    6
-2020-08-02 23:42:16,308 Sanity check: Before moving to the modeling state, If your algorithm is sensitive to values
-2020-08-02 23:42:16,308 we recommend to apply scaler() for those columns with range beyond [0,1]
-2020-08-02 23:42:16,309                    elite-total                    0                   10
-2020-08-02 23:42:16,466 write further transformed all data using transformer (started) = MinMaxScaler
-2020-08-02 23:42:25,697 write further transformed all data using transformer (done) = MinMaxScaler
-2020-08-02 23:42:25,699 =====APPLICATION MODE = PRE-PROCESSING (COMPLETED IN 15 seconds)=====
-2020-08-02 23:42:25,699 =====APPLICATION MODE = SPLITTING-TRAIN-TEST (STARTED)=====
-2020-08-02 23:42:25,699 Splitting train and test data started
-2020-08-02 23:42:27,042 Started train-test split, using test_size=0.2, random_state=42
-2020-08-02 23:42:27,237  col   0, name =               average_stars>=4
-2020-08-02 23:42:27,238  col   1, name =           votes-funny_bucket_0
-2020-08-02 23:42:27,238  col   2, name =           votes-funny_bucket_1
-2020-08-02 23:42:27,238  col   3, name =           votes-funny_bucket_2
-2020-08-02 23:42:27,238  col   4, name =           votes-funny_bucket_3
-2020-08-02 23:42:27,238  col   5, name =           votes-funny_bucket_4
-2020-08-02 23:42:27,238  col   6, name =           votes-funny_bucket_5
-2020-08-02 23:42:27,238  col   7, name =          votes-useful_bucket_0
-2020-08-02 23:42:27,238  col   8, name =          votes-useful_bucket_1
-2020-08-02 23:42:27,238  col   9, name =          votes-useful_bucket_2
-2020-08-02 23:42:27,238  col  10, name =          votes-useful_bucket_3
-2020-08-02 23:42:27,238  col  11, name =          votes-useful_bucket_4
-2020-08-02 23:42:27,238  col  12, name =          votes-useful_bucket_5
-2020-08-02 23:42:27,238  col  13, name =            votes-cool_bucket_0
-2020-08-02 23:42:27,238  col  14, name =            votes-cool_bucket_1
-2020-08-02 23:42:27,238  col  15, name =            votes-cool_bucket_2
-2020-08-02 23:42:27,238  col  16, name =            votes-cool_bucket_3
-2020-08-02 23:42:27,238  col  17, name =            votes-cool_bucket_4
-2020-08-02 23:42:27,238  col  18, name =            votes-cool_bucket_5
-2020-08-02 23:42:27,238  col  19, name =     compliments-funny_bucket_0
-2020-08-02 23:42:27,238  col  20, name =     compliments-funny_bucket_1
-2020-08-02 23:42:27,238  col  21, name =     compliments-funny_bucket_2
-2020-08-02 23:42:27,238  col  22, name =     compliments-funny_bucket_3
-2020-08-02 23:42:27,238  col  23, name =     compliments-funny_bucket_4
-2020-08-02 23:42:27,238  col  24, name =     compliments-funny_bucket_5
-2020-08-02 23:42:27,238  col  25, name =      compliments-cool_bucket_0
-2020-08-02 23:42:27,239  col  26, name =      compliments-cool_bucket_1
-2020-08-02 23:42:27,239  col  27, name =      compliments-cool_bucket_2
-2020-08-02 23:42:27,239  col  28, name =      compliments-cool_bucket_3
-2020-08-02 23:42:27,239  col  29, name =      compliments-cool_bucket_4
-2020-08-02 23:42:27,239  col  30, name =      compliments-cool_bucket_5
-2020-08-02 23:42:27,239  col  31, name =    compliments-writer_bucket_0
-2020-08-02 23:42:27,239  col  32, name =    compliments-writer_bucket_1
-2020-08-02 23:42:27,239  col  33, name =    compliments-writer_bucket_2
-2020-08-02 23:42:27,239  col  34, name =    compliments-writer_bucket_3
-2020-08-02 23:42:27,239  col  35, name =    compliments-writer_bucket_4
-2020-08-02 23:42:27,239  col  36, name =    compliments-writer_bucket_5
-2020-08-02 23:42:27,239  col  37, name =    compliments-photos_bucket_0
-2020-08-02 23:42:27,239  col  38, name =    compliments-photos_bucket_1
-2020-08-02 23:42:27,239  col  39, name =    compliments-photos_bucket_2
-2020-08-02 23:42:27,239  col  40, name =    compliments-photos_bucket_3
-2020-08-02 23:42:27,239  col  41, name =    compliments-photos_bucket_4
-2020-08-02 23:42:27,239  col  42, name =    compliments-photos_bucket_5
-2020-08-02 23:42:27,239  col  43, name =      compliments-more_bucket_0
-2020-08-02 23:42:27,239  col  44, name =      compliments-more_bucket_1
-2020-08-02 23:42:27,239  col  45, name =      compliments-more_bucket_2
-2020-08-02 23:42:27,239  col  46, name =      compliments-more_bucket_3
-2020-08-02 23:42:27,239  col  47, name =      compliments-more_bucket_4
-2020-08-02 23:42:27,239  col  48, name =      compliments-more_bucket_5
-2020-08-02 23:42:27,239  col  49, name =     compliments-plain_bucket_0
-2020-08-02 23:42:27,239  col  50, name =     compliments-plain_bucket_1
-2020-08-02 23:42:27,239  col  51, name =     compliments-plain_bucket_2
-2020-08-02 23:42:27,239  col  52, name =     compliments-plain_bucket_3
-2020-08-02 23:42:27,239  col  53, name =     compliments-plain_bucket_4
-2020-08-02 23:42:27,239  col  54, name =     compliments-plain_bucket_5
-2020-08-02 23:42:27,239  col  55, name =      compliments-note_bucket_0
-2020-08-02 23:42:27,239  col  56, name =      compliments-note_bucket_1
-2020-08-02 23:42:27,240  col  57, name =      compliments-note_bucket_2
-2020-08-02 23:42:27,240  col  58, name =      compliments-note_bucket_3
-2020-08-02 23:42:27,240  col  59, name =      compliments-note_bucket_4
-2020-08-02 23:42:27,240  col  60, name =      compliments-note_bucket_5
-2020-08-02 23:42:27,240  col  61, name =       compliments-hot_bucket_0
-2020-08-02 23:42:27,240  col  62, name =       compliments-hot_bucket_1
-2020-08-02 23:42:27,240  col  63, name =       compliments-hot_bucket_2
-2020-08-02 23:42:27,240  col  64, name =       compliments-hot_bucket_3
-2020-08-02 23:42:27,240  col  65, name =       compliments-hot_bucket_4
-2020-08-02 23:42:27,240  col  66, name =       compliments-hot_bucket_5
-2020-08-02 23:42:27,240  col  67, name =      compliments-cute_bucket_0
-2020-08-02 23:42:27,240  col  68, name =      compliments-cute_bucket_1
-2020-08-02 23:42:27,240  col  69, name =      compliments-cute_bucket_2
-2020-08-02 23:42:27,240  col  70, name =      compliments-cute_bucket_3
-2020-08-02 23:42:27,240  col  71, name =      compliments-cute_bucket_4
-2020-08-02 23:42:27,240  col  72, name =      compliments-cute_bucket_5
-2020-08-02 23:42:27,240  col  73, name =      compliments-list_bucket_0
-2020-08-02 23:42:27,240  col  74, name =      compliments-list_bucket_1
-2020-08-02 23:42:27,240  col  75, name =      compliments-list_bucket_2
-2020-08-02 23:42:27,240  col  76, name =      compliments-list_bucket_3
-2020-08-02 23:42:27,240  col  77, name =      compliments-list_bucket_4
-2020-08-02 23:42:27,240  col  78, name =      compliments-list_bucket_5
-2020-08-02 23:42:27,240  col  79, name =   compliments-profile_bucket_0
-2020-08-02 23:42:27,240  col  80, name =   compliments-profile_bucket_1
-2020-08-02 23:42:27,240  col  81, name =   compliments-profile_bucket_2
-2020-08-02 23:42:27,241  col  82, name =   compliments-profile_bucket_3
-2020-08-02 23:42:27,241  col  83, name =   compliments-profile_bucket_4
-2020-08-02 23:42:27,241  col  84, name =   compliments-profile_bucket_5
-2020-08-02 23:42:27,241  col  85, name =                 elite_bucket_0
-2020-08-02 23:42:27,241  col  86, name =                 elite_bucket_1
-2020-08-02 23:42:27,241  col  87, name =                 elite_bucket_2
-2020-08-02 23:42:27,241  col  88, name =                 elite_bucket_3
-2020-08-02 23:42:27,241  col  89, name =                 elite_bucket_4
-2020-08-02 23:42:27,241  col  90, name =                 elite_bucket_5
-2020-08-02 23:42:27,241  col  91, name =                 elite_bucket_6
-2020-08-02 23:42:27,241  col  92, name =                 elite_bucket_7
-2020-08-02 23:42:27,241  col  93, name =                 elite_bucket_8
-2020-08-02 23:42:27,241  col  94, name =                 elite_bucket_9
-2020-08-02 23:42:27,241  col  95, name =                    elite-total
-2020-08-02 23:42:27,241  col  96, name =          review_count_bucket_0
-2020-08-02 23:42:27,241  col  97, name =          review_count_bucket_1
-2020-08-02 23:42:27,241  col  98, name =          review_count_bucket_2
-2020-08-02 23:42:27,241  col  99, name =          review_count_bucket_3
-2020-08-02 23:42:27,241  col 100, name =          review_count_bucket_4
-2020-08-02 23:42:27,241  col 101, name =                  fans_bucket_0
-2020-08-02 23:42:27,241  col 102, name =                  fans_bucket_1
-2020-08-02 23:42:27,241  col 103, name =                  fans_bucket_2
-2020-08-02 23:42:27,241  col 104, name =         friends_count_bucket_1
-2020-08-02 23:42:27,241  col 105, name =         friends_count_bucket_2
-2020-08-02 23:42:27,241  col 106, name =         friends_count_bucket_3
-2020-08-02 23:42:27,241  col 107, name =         friends_count_bucket_4
-2020-08-02 23:42:27,241  col 108, name =         friends_count_bucket_5
-2020-08-02 23:42:27,241  col 109, name =         friends_count_bucket_6
-2020-08-02 23:42:27,241 Started writing train data to results/trainData_MinMaxScaler.csv
-2020-08-02 23:42:34,456 Started writing test data to results/testData_MinMaxScaler.csv
-2020-08-02 23:42:36,258 Splitting train and test data completed
-2020-08-02 23:42:36,280 =====APPLICATION MODE = SPLITTING-TRAIN-TEST (COMPLETED IN 10 seconds)=====
-2020-08-02 23:42:36,280 =====APPLICATION MODE = CASE1-TRAINING (STARTED)=====
-2020-08-02 23:42:36,283 model training started
-2020-08-02 23:42:37,108 Sanity check started for results/trainData_MinMaxScaler.csv, #rows = 160000, #columns = 110
-2020-08-02 23:42:37,921                      term name    number of buckets
-2020-08-02 23:42:38,014               average_stars>=4,                    1
-2020-08-02 23:42:38,014                    votes-funny,                    6
-2020-08-02 23:42:38,015                   votes-useful,                    6
-2020-08-02 23:42:38,015                     votes-cool,                    6
-2020-08-02 23:42:38,015              compliments-funny,                    6
-2020-08-02 23:42:38,015               compliments-cool,                    6
-2020-08-02 23:42:38,015             compliments-writer,                    6
-2020-08-02 23:42:38,015             compliments-photos,                    6
-2020-08-02 23:42:38,015               compliments-more,                    6
-2020-08-02 23:42:38,015              compliments-plain,                    6
-2020-08-02 23:42:38,015               compliments-note,                    6
-2020-08-02 23:42:38,015                compliments-hot,                    6
-2020-08-02 23:42:38,015               compliments-cute,                    6
-2020-08-02 23:42:38,015               compliments-list,                    6
-2020-08-02 23:42:38,015            compliments-profile,                    6
-2020-08-02 23:42:38,015                          elite,                    1
-2020-08-02 23:42:38,015                   review_count,                    5
-2020-08-02 23:42:38,015                           fans,                    3
-2020-08-02 23:42:38,015                  friends_count,                    6
-2020-08-02 23:43:25,861 Best hyperparameter C = 1.000000, best score (roc_auc) = 0.714925
-2020-08-02 23:43:26,240 =====APPLICATION MODE = CASE1-TRAINING (COMPLETED IN 49 seconds)=====
-2020-08-02 23:43:26,240 =====APPLICATION MODE = CASE1-PREDICTION (STARTED)=====
-2020-08-02 23:43:26,243 model prediction started
-2020-08-02 23:43:26,243 Loaded model artefacts = artefacts/model-case1-default
-2020-08-02 23:43:26,481 Loaded test data from = results/testData_MinMaxScaler.csv
-2020-08-02 23:43:26,597 Summary 
+2020-08-03 01:31:41,849                      term name    number of buckets
+2020-08-03 01:31:41,924               average_stars>=4,                    1
+2020-08-03 01:31:41,925                    votes-funny,                    6
+2020-08-03 01:31:41,925                   votes-useful,                    6
+2020-08-03 01:31:41,925                     votes-cool,                    6
+2020-08-03 01:31:41,925              compliments-funny,                    6
+2020-08-03 01:31:41,925               compliments-cool,                    6
+2020-08-03 01:31:41,925             compliments-writer,                    6
+2020-08-03 01:31:41,925             compliments-photos,                    6
+2020-08-03 01:31:41,925               compliments-more,                    6
+2020-08-03 01:31:41,925              compliments-plain,                    6
+2020-08-03 01:31:41,925               compliments-note,                    6
+2020-08-03 01:31:41,925                compliments-hot,                    6
+2020-08-03 01:31:41,925               compliments-cute,                    6
+2020-08-03 01:31:41,925               compliments-list,                    6
+2020-08-03 01:31:41,925            compliments-profile,                    6
+2020-08-03 01:31:41,925                          elite,                    1
+2020-08-03 01:31:41,925                   review_count,                    5
+2020-08-03 01:31:41,925                           fans,                    3
+2020-08-03 01:31:41,925                  friends_count,                    6
+2020-08-03 01:31:41,925 Sanity check: Before moving to the modeling state, If your algorithm is sensitive to values
+2020-08-03 01:31:41,925 we recommend to apply scaler() for those columns with range beyond [0,1]
+2020-08-03 01:31:41,926                    elite-total                    0                   10
+2020-08-03 01:31:42,084 write further transformed all data using transformer (started) = MinMaxScaler
+2020-08-03 01:31:51,414 write further transformed all data using transformer (done) = MinMaxScaler
+2020-08-03 01:31:51,423 =====APPLICATION MODE = PRE-PROCESSING (COMPLETED IN 15 seconds)=====
+2020-08-03 01:31:51,423 =====APPLICATION MODE = SPLITTING-TRAIN-TEST (STARTED)=====
+2020-08-03 01:31:51,423 Splitting train and test data started
+2020-08-03 01:31:52,749 Started train-test split, using test_size=0.2, random_state=42
+2020-08-03 01:31:52,946  col   0, name =               average_stars>=4
+2020-08-03 01:31:52,946  col   1, name =           votes-funny_bucket_0
+2020-08-03 01:31:52,946  col   2, name =           votes-funny_bucket_1
+2020-08-03 01:31:52,946  col   3, name =           votes-funny_bucket_2
+2020-08-03 01:31:52,946  col   4, name =           votes-funny_bucket_3
+2020-08-03 01:31:52,946  col   5, name =           votes-funny_bucket_4
+2020-08-03 01:31:52,946  col   6, name =           votes-funny_bucket_5
+2020-08-03 01:31:52,946  col   7, name =          votes-useful_bucket_0
+2020-08-03 01:31:52,946  col   8, name =          votes-useful_bucket_1
+2020-08-03 01:31:52,946  col   9, name =          votes-useful_bucket_2
+2020-08-03 01:31:52,947  col  10, name =          votes-useful_bucket_3
+2020-08-03 01:31:52,947  col  11, name =          votes-useful_bucket_4
+2020-08-03 01:31:52,947  col  12, name =          votes-useful_bucket_5
+2020-08-03 01:31:52,947  col  13, name =            votes-cool_bucket_0
+2020-08-03 01:31:52,947  col  14, name =            votes-cool_bucket_1
+2020-08-03 01:31:52,947  col  15, name =            votes-cool_bucket_2
+2020-08-03 01:31:52,947  col  16, name =            votes-cool_bucket_3
+2020-08-03 01:31:52,947  col  17, name =            votes-cool_bucket_4
+2020-08-03 01:31:52,947  col  18, name =            votes-cool_bucket_5
+2020-08-03 01:31:52,947  col  19, name =     compliments-funny_bucket_0
+2020-08-03 01:31:52,947  col  20, name =     compliments-funny_bucket_1
+2020-08-03 01:31:52,947  col  21, name =     compliments-funny_bucket_2
+2020-08-03 01:31:52,947  col  22, name =     compliments-funny_bucket_3
+2020-08-03 01:31:52,947  col  23, name =     compliments-funny_bucket_4
+2020-08-03 01:31:52,947  col  24, name =     compliments-funny_bucket_5
+2020-08-03 01:31:52,947  col  25, name =      compliments-cool_bucket_0
+2020-08-03 01:31:52,947  col  26, name =      compliments-cool_bucket_1
+2020-08-03 01:31:52,947  col  27, name =      compliments-cool_bucket_2
+2020-08-03 01:31:52,947  col  28, name =      compliments-cool_bucket_3
+2020-08-03 01:31:52,947  col  29, name =      compliments-cool_bucket_4
+2020-08-03 01:31:52,947  col  30, name =      compliments-cool_bucket_5
+2020-08-03 01:31:52,947  col  31, name =    compliments-writer_bucket_0
+2020-08-03 01:31:52,947  col  32, name =    compliments-writer_bucket_1
+2020-08-03 01:31:52,947  col  33, name =    compliments-writer_bucket_2
+2020-08-03 01:31:52,948  col  34, name =    compliments-writer_bucket_3
+2020-08-03 01:31:52,948  col  35, name =    compliments-writer_bucket_4
+2020-08-03 01:31:52,948  col  36, name =    compliments-writer_bucket_5
+2020-08-03 01:31:52,948  col  37, name =    compliments-photos_bucket_0
+2020-08-03 01:31:52,948  col  38, name =    compliments-photos_bucket_1
+2020-08-03 01:31:52,948  col  39, name =    compliments-photos_bucket_2
+2020-08-03 01:31:52,948  col  40, name =    compliments-photos_bucket_3
+2020-08-03 01:31:52,948  col  41, name =    compliments-photos_bucket_4
+2020-08-03 01:31:52,948  col  42, name =    compliments-photos_bucket_5
+2020-08-03 01:31:52,948  col  43, name =      compliments-more_bucket_0
+2020-08-03 01:31:52,948  col  44, name =      compliments-more_bucket_1
+2020-08-03 01:31:52,948  col  45, name =      compliments-more_bucket_2
+2020-08-03 01:31:52,948  col  46, name =      compliments-more_bucket_3
+2020-08-03 01:31:52,948  col  47, name =      compliments-more_bucket_4
+2020-08-03 01:31:52,948  col  48, name =      compliments-more_bucket_5
+2020-08-03 01:31:52,948  col  49, name =     compliments-plain_bucket_0
+2020-08-03 01:31:52,948  col  50, name =     compliments-plain_bucket_1
+2020-08-03 01:31:52,948  col  51, name =     compliments-plain_bucket_2
+2020-08-03 01:31:52,948  col  52, name =     compliments-plain_bucket_3
+2020-08-03 01:31:52,948  col  53, name =     compliments-plain_bucket_4
+2020-08-03 01:31:52,948  col  54, name =     compliments-plain_bucket_5
+2020-08-03 01:31:52,948  col  55, name =      compliments-note_bucket_0
+2020-08-03 01:31:52,948  col  56, name =      compliments-note_bucket_1
+2020-08-03 01:31:52,948  col  57, name =      compliments-note_bucket_2
+2020-08-03 01:31:52,948  col  58, name =      compliments-note_bucket_3
+2020-08-03 01:31:52,948  col  59, name =      compliments-note_bucket_4
+2020-08-03 01:31:52,948  col  60, name =      compliments-note_bucket_5
+2020-08-03 01:31:52,948  col  61, name =       compliments-hot_bucket_0
+2020-08-03 01:31:52,948  col  62, name =       compliments-hot_bucket_1
+2020-08-03 01:31:52,948  col  63, name =       compliments-hot_bucket_2
+2020-08-03 01:31:52,948  col  64, name =       compliments-hot_bucket_3
+2020-08-03 01:31:52,949  col  65, name =       compliments-hot_bucket_4
+2020-08-03 01:31:52,949  col  66, name =       compliments-hot_bucket_5
+2020-08-03 01:31:52,949  col  67, name =      compliments-cute_bucket_0
+2020-08-03 01:31:52,949  col  68, name =      compliments-cute_bucket_1
+2020-08-03 01:31:52,949  col  69, name =      compliments-cute_bucket_2
+2020-08-03 01:31:52,949  col  70, name =      compliments-cute_bucket_3
+2020-08-03 01:31:52,949  col  71, name =      compliments-cute_bucket_4
+2020-08-03 01:31:52,949  col  72, name =      compliments-cute_bucket_5
+2020-08-03 01:31:52,949  col  73, name =      compliments-list_bucket_0
+2020-08-03 01:31:52,949  col  74, name =      compliments-list_bucket_1
+2020-08-03 01:31:52,949  col  75, name =      compliments-list_bucket_2
+2020-08-03 01:31:52,949  col  76, name =      compliments-list_bucket_3
+2020-08-03 01:31:52,949  col  77, name =      compliments-list_bucket_4
+2020-08-03 01:31:52,949  col  78, name =      compliments-list_bucket_5
+2020-08-03 01:31:52,949  col  79, name =   compliments-profile_bucket_0
+2020-08-03 01:31:52,949  col  80, name =   compliments-profile_bucket_1
+2020-08-03 01:31:52,949  col  81, name =   compliments-profile_bucket_2
+2020-08-03 01:31:52,949  col  82, name =   compliments-profile_bucket_3
+2020-08-03 01:31:52,949  col  83, name =   compliments-profile_bucket_4
+2020-08-03 01:31:52,949  col  84, name =   compliments-profile_bucket_5
+2020-08-03 01:31:52,949  col  85, name =                 elite_bucket_0
+2020-08-03 01:31:52,949  col  86, name =                 elite_bucket_1
+2020-08-03 01:31:52,949  col  87, name =                 elite_bucket_2
+2020-08-03 01:31:52,949  col  88, name =                 elite_bucket_3
+2020-08-03 01:31:52,949  col  89, name =                 elite_bucket_4
+2020-08-03 01:31:52,949  col  90, name =                 elite_bucket_5
+2020-08-03 01:31:52,949  col  91, name =                 elite_bucket_6
+2020-08-03 01:31:52,949  col  92, name =                 elite_bucket_7
+2020-08-03 01:31:52,949  col  93, name =                 elite_bucket_8
+2020-08-03 01:31:52,949  col  94, name =                 elite_bucket_9
+2020-08-03 01:31:52,949  col  95, name =                    elite-total
+2020-08-03 01:31:52,949  col  96, name =          review_count_bucket_0
+2020-08-03 01:31:52,950  col  97, name =          review_count_bucket_1
+2020-08-03 01:31:52,950  col  98, name =          review_count_bucket_2
+2020-08-03 01:31:52,950  col  99, name =          review_count_bucket_3
+2020-08-03 01:31:52,950  col 100, name =          review_count_bucket_4
+2020-08-03 01:31:52,950  col 101, name =                  fans_bucket_0
+2020-08-03 01:31:52,950  col 102, name =                  fans_bucket_1
+2020-08-03 01:31:52,950  col 103, name =                  fans_bucket_2
+2020-08-03 01:31:52,950  col 104, name =         friends_count_bucket_1
+2020-08-03 01:31:52,950  col 105, name =         friends_count_bucket_2
+2020-08-03 01:31:52,950  col 106, name =         friends_count_bucket_3
+2020-08-03 01:31:52,950  col 107, name =         friends_count_bucket_4
+2020-08-03 01:31:52,950  col 108, name =         friends_count_bucket_5
+2020-08-03 01:31:52,950  col 109, name =         friends_count_bucket_6
+2020-08-03 01:31:52,950 Started writing train data to results/trainData.csv
+2020-08-03 01:32:00,112 Started writing test data to results/testData.csv
+2020-08-03 01:32:01,912 Splitting train and test data completed
+2020-08-03 01:32:01,940 =====APPLICATION MODE = SPLITTING-TRAIN-TEST (COMPLETED IN 10 seconds)=====
+2020-08-03 01:32:01,940 =====APPLICATION MODE = CASE1-TRAINING (STARTED)=====
+2020-08-03 01:32:01,943 model training started
+2020-08-03 01:32:02,774 Sanity check started for results/trainData.csv, #rows = 160000, #columns = 110
+2020-08-03 01:32:03,586                      term name    number of buckets
+2020-08-03 01:32:03,680               average_stars>=4,                    1
+2020-08-03 01:32:03,680                    votes-funny,                    6
+2020-08-03 01:32:03,680                   votes-useful,                    6
+2020-08-03 01:32:03,680                     votes-cool,                    6
+2020-08-03 01:32:03,680              compliments-funny,                    6
+2020-08-03 01:32:03,680               compliments-cool,                    6
+2020-08-03 01:32:03,680             compliments-writer,                    6
+2020-08-03 01:32:03,680             compliments-photos,                    6
+2020-08-03 01:32:03,680               compliments-more,                    6
+2020-08-03 01:32:03,680              compliments-plain,                    6
+2020-08-03 01:32:03,680               compliments-note,                    6
+2020-08-03 01:32:03,680                compliments-hot,                    6
+2020-08-03 01:32:03,680               compliments-cute,                    6
+2020-08-03 01:32:03,680               compliments-list,                    6
+2020-08-03 01:32:03,680            compliments-profile,                    6
+2020-08-03 01:32:03,680                          elite,                    1
+2020-08-03 01:32:03,680                   review_count,                    5
+2020-08-03 01:32:03,681                           fans,                    3
+2020-08-03 01:32:03,681                  friends_count,                    6
+2020-08-03 01:32:51,627 Best hyperparameter C = 1.000000, best score (roc_auc) = 0.714925
+2020-08-03 01:32:52,038 =====APPLICATION MODE = CASE1-TRAINING (COMPLETED IN 50 seconds)=====
+2020-08-03 01:32:52,038 =====APPLICATION MODE = CASE1-PREDICTION (STARTED)=====
+2020-08-03 01:32:52,041 model prediction started
+2020-08-03 01:32:52,042 Loaded model artefacts = artefacts/model-case1-default
+2020-08-03 01:32:52,290 Loaded test data from = results/testData.csv
+2020-08-03 01:32:52,403 Summary 
  precision score = 0.622
  recall score = 0.588
  f1-score = 0.605
  roc_auc_score = 0.656
-2020-08-02 23:43:26,599 =====APPLICATION MODE = CASE1-PREDICTION (COMPLETED IN 0 seconds)=====
-2020-08-02 23:43:26,599 =====APPLICATION MODE = CASE2-SIMILAR-USER EXAPANSION (STARTED)=====
-2020-08-02 23:43:26,602 Filtering to get seed users
-2020-08-02 23:43:26,621 Total users = 1000
-2020-08-02 23:43:26,622 Filter field =   yelping_since_year,   range = [ 2010,  2014],   post-filter records = 780
-2020-08-02 23:43:26,623 Filter field =        average_stars,   range = [    4,     5],   post-filter records = 360
-2020-08-02 23:43:26,624 Filter field =     elite_year_count,   range = [    0,     2],   post-filter records = 357
-2020-08-02 23:43:26,625 Filter field =        friends_count,   range = [    3,  9999],   post-filter records = 66
-2020-08-02 23:43:26,626 Exact-match users = 66
-2020-08-02 23:43:26,626 Expansion started
-2020-08-02 23:43:26,626 Estimated K-nearest neighbors, K = 4
-2020-08-02 23:43:26,742 Expansion completed, output path = results/recommended_user_list.csv
-2020-08-02 23:43:26,742 =====APPLICATION MODE = CASE2-SIMILAR-USER EXAPANSION (COMPLETED IN 0 seconds)=====
-2020-08-02 23:43:26,742 TOTAL EXECUTION TOOK 76 SECONDS TO COMPLETE (MODE = full)
+2020-08-03 01:32:52,405 =====APPLICATION MODE = CASE1-PREDICTION (COMPLETED IN 0 seconds)=====
+2020-08-03 01:32:52,405 =====APPLICATION MODE = CASE2-SIMILAR-USER EXAPANSION (STARTED)=====
+2020-08-03 01:32:52,407 Filtering to get seed users
+2020-08-03 01:32:52,427 Total users = 1000
+2020-08-03 01:32:52,429 Filter field =   yelping_since_year,   range = [ 2010,  2014],   post-filter records = 780
+2020-08-03 01:32:52,430 Filter field =        average_stars,   range = [    4,     5],   post-filter records = 360
+2020-08-03 01:32:52,431 Filter field =     elite_year_count,   range = [    0,     2],   post-filter records = 357
+2020-08-03 01:32:52,432 Filter field =        friends_count,   range = [    3,  9999],   post-filter records = 66
+2020-08-03 01:32:52,432 Exact-match users = 66
+2020-08-03 01:32:52,432 Expansion started
+2020-08-03 01:32:52,432 Estimated K-nearest neighbors, K = 4
+2020-08-03 01:32:52,550 Expansion completed, output path = results/recommended_user_list.csv
+2020-08-03 01:32:52,551 =====APPLICATION MODE = CASE2-SIMILAR-USER EXAPANSION (COMPLETED IN 0 seconds)=====
+2020-08-03 01:32:52,551 TOTAL EXECUTION TOOK 76 SECONDS TO COMPLETE (MODE = full)
