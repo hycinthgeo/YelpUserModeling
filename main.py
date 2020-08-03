@@ -15,7 +15,7 @@ def main():
 	# initialization
 	io_config = App.init_IO()
 	model_path = io_config["transformer path"]
-	logger = App.init_logging(io_config["log path"])
+	logger = App.init_logging(io_config["log path"], "info.log")
 	
 	
 	# run selected part of application
@@ -57,14 +57,14 @@ class myapp():
 
 		return io_config.to_dict()#user_path, model_path, result_path, log_path
 
-	def init_logging(self, log_path):
+	def init_logging(self, log_path, logname):
 		# initialize logging
 		logger=logging.getLogger("myapp")
 		logging.basicConfig(
 			level=logging.INFO,
 			format='%(asctime)s %(message)s', 
 			handlers=[
-				logging.FileHandler(log_path + "info.log", mode = 'w'),
+				logging.FileHandler(log_path + logname, mode = 'w'),
 				logging.StreamHandler()
 			]
 		)

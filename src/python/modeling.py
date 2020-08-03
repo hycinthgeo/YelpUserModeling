@@ -31,6 +31,9 @@ class modelTraining:
         X_train = df.drop([label], axis = 1).values
         y_train = [x[0] for x in df[[c for c in [label]]].values]
         feature_names = df.drop([label], axis = 1).columns
+        with open('results/feature_names.txt', 'w') as filehandle:
+            for listitem in feature_names:
+                filehandle.write('%s\n' % listitem)
 
         algorithm = self.model_config["algorithm"]
         if_tuning = self.model_config["if_tuning"]
@@ -71,7 +74,7 @@ class modelTraining:
         coef_topK = 50
         model_config_path = self.model_config_path[self.model_config_path.find("-"):self.model_config_path.find(".json")]
         fig_path_coef = self.result_path + "coef%s.png"%model_config_path
-        plot_coefficients(feature_names, coef, coef_topK, fig_path_coef)
+        plot_coefficients(feature_names, coef, coef_topK, fig_path_coef, True)
 
 
 
@@ -92,7 +95,7 @@ def get_labels(user_path, raw_label_name, label_eval):
         y = [1 if x is True else 0 for x in df_label.eval(label_eval)]
     return y
 
-def plot_coefficients(feature_names, coef, coef_topK, fig_path_coef):
+def plot_coefficients(feature_names, coef, coef_topK, fig_path_coef, save_fig):
     pref_id_map = {}
     for i, col in enumerate(feature_names):
     #print(col)
@@ -126,7 +129,8 @@ def plot_coefficients(feature_names, coef, coef_topK, fig_path_coef):
     plt.ylim([120, -10])
     plt.xlabel("coef")
     plt.ylabel("Feature ID (index)")
-    plt.savefig(fig_path_coef)
+    if save_fig:
+        plt.savefig(fig_path_coef)
     #plt.show()
 
 def plot_tuning_scores(clf, n_cv, scoring, fig_path_tuning):

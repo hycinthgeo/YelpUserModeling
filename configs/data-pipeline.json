@@ -9,6 +9,7 @@
 	"test data": "results/testData_MinMaxScaler.csv",
 	"modelConfig path": "configs/modelConfig-case1-default.json",
 	"modelArtefact path": "artefacts/model-case1-default",
+	"featureNames path": "results/feature_names.txt",
 	"result path": "results/",
 	"log path": "logs/"
 }
