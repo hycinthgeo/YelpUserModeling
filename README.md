@@ -12,13 +12,6 @@ Even though UI design is not within scope of this project, as my end product is 
 
 ![alt text](https://github.com/hycinthgeo/YelpUserModeling/blob/master/docs/overview.png?raw=true)
 
-##### Table of Contents  
-##### Table of Contents  
-[Headers](#headers)  
-[Emphasis](#emphasis)  
-...snip...    
-<a name="headers"/>
-## Headers
 
 ## Installations
 The installation instruction below is based on an Ubuntu PC with pre-installed Python 3. We will use `requirements.txt` file to install dependencies.  
@@ -47,9 +40,18 @@ The application supported various modes, and allows developers to either run the
 * [Link of PDF file to show simple UI for Case 2](https://github.com/hycinthgeo/YelpUserModeling/blob/master/docs/UI-case2.pdf)
 
 ## Use Case 1
-In this use case 
+In this use case, I aimes at facilitate business strategies to understand who and why tends to give high-star reviews. Motivated by the model performance and the interpretability of the Logistic Regression (LR) model, herein, I choose the hyper-parameter `C`=0.1, as it has both good training and validation [`roc_auc` score](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.roc_auc_score.html#sklearn.metrics.roc_auc_score).
 
+<figure class="image">
+  <img src="{{ include.url }}" alt="{{ include.description }}">
+  <figcaption>{{ include.description }}</figcaption>
+</figure>
+![alt text](https://github.com/hycinthgeo/YelpUserModeling/blob/master/results/tuning-C-case1-default.png?raw=true)
+<p>
+    <img src="https://github.com/hycinthgeo/YelpUserModeling/blob/master/results/tuning-C-case1-default.png" alt>
+</p>
+<p>
+    <em>Tuning hyper-parameter `C` for Logistic Regression/em>
+</p>
 
-## Use Case 2
-
-## Conclusions
+and what the final model coefficients tell. 
