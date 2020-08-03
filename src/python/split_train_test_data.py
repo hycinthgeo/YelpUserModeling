@@ -40,7 +40,8 @@ class Splitter:
         #output_path_test = input_path[:input_path.find("/")+1] + "test" + input_path[input_path.find("Data"):]
         #output_colnames = list(df.columns) + [label_eval] if len(label_eval) > 0 else list(df.columns) + [raw_label_name]
         output_colnames = list(df.columns)
-        print(output_colnames)
+        for i, col in enumerate(output_colnames):
+            self.logger.info(" col %3d, name = %30s"%(i, col))
         self.logger.info("Started writing train data to %s"%output_path_train)
         train = pd.DataFrame(X_train, columns = df.columns)
         #train = pd.DataFrame(np.concatenate((X_train, [[cur] for cur in y_train]), axis = 1), columns = output_colnames)

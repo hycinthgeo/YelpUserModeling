@@ -14,14 +14,12 @@ def sanity_check_dataframe(logger, raw):
         else:
             term_bucket_count[col.split("-")[0]] = 1
         if (abs(raw[col].min() - 0) > 0.01 or abs(raw[col].max() - 1) > 0.01):
-            print(col, abs(raw[col].min() - 0), abs(raw[col].max() - 1))
             cols_to_normalize.append(col)
 
 
     for term, count in term_bucket_count.items():
         logger.info("%30s, %20d"%(term, count))
 
-    print(cols_to_normalize)
     if len(cols_to_normalize) > 0:
         logger.info("Sanity check: Before moving to the modeling state, If your algorithm is sensitive to values")
         logger.info("we recommend to apply scaler() for those columns with range beyond [0,1]")

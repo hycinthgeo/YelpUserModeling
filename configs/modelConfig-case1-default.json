@@ -6,5 +6,5 @@
   "train-test split random state": 42,
   "K-fold cross-validation": 5,
   "scoring": "roc_auc",
-  "if_tuning": "False"
+  "if_tuning": "True"
 }

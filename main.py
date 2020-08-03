@@ -1,6 +1,6 @@
 import sys
 sys.path.append('src/python')
-#from preprocessing import PreProcessing
+from time import *
 import preprocessing as prep
 import split_train_test_data as split
 import modeling as train
@@ -10,10 +10,13 @@ import pandas as pd
 import similar_user_expansion as sim
 
 
+
 def main():
-	App = myapp()
+
+	t_start = time()
 
 	# initialization
+	App = myapp()
 	io_config = App.init_IO()
 	model_path = io_config["transformer path"]
 	logger = App.init_logging(io_config["log path"], "info.log")
@@ -27,27 +30,36 @@ def main():
 	    app_mode = App.parsing_arguments(logger)#, io_config)
 
 	if app_mode in ["pre-processing", "full"]:
+		t = time()
 		logger.info("="*5 + "APPLICATION MODE = PRE-PROCESSING (STARTED)" + "="*5 )
 		App.run_preprocessing(logger, io_config)
+		logger.info("="*5 + "APPLICATION MODE = PRE-PROCESSING (COMPLETED IN %d seconds)"%(time() - t) + "="*5 )
 
 	if app_mode in ["split", "full"]:
+		t = time()
 		logger.info("="*5 + "APPLICATION MODE = SPLITTING-TRAIN-TEST (STARTED)" + "="*5 )
 		App.run_train_test_split(logger, io_config)
+		logger.info("="*5 + "APPLICATION MODE = SPLITTING-TRAIN-TEST (COMPLETED IN %d seconds)"%(time() - t) + "="*5 )
 
 	if app_mode in ["training", "full"]:
-		logger.info("="*5 + "APPLICATION MODE = TRAINING (STARTED)" + "="*5 )
+		t = time()
+		logger.info("="*5 + "APPLICATION MODE = CASE1-TRAINING (STARTED)" + "="*5 )
 		App.run_model_training(logger, io_config)
+		logger.info("="*5 + "APPLICATION MODE = CASE1-TRAINING (COMPLETED IN %d seconds)"%(time() - t) + "="*5 )
 
 	if app_mode in ["prediction", "full"]:
-		logger.info("="*5 + "APPLICATION MODE = PREDICTION (STARTED)" + "="*5 )
+		t = time()
+		logger.info("="*5 + "APPLICATION MODE = CASE1-PREDICTION (STARTED)" + "="*5 )
 		App.run_model_prediction(logger, io_config)
+		logger.info("="*5 + "APPLICATION MODE = CASE1-PREDICTION (COMPLETED IN %d seconds)"%(time() - t) + "="*5 )
 
 	if app_mode in ["similar-user", "full"]:
-		logger.info("="*5 + "APPLICATION MODE = PREDICTION (STARTED)" + "="*5 )
+		t = time()
+		logger.info("="*5 + "APPLICATION MODE = CASE2-SIMILAR-USER EXAPANSION (STARTED)" + "="*5 )
 		App.run_similar_user_expansion(logger, io_config)
+		logger.info("="*5 + "APPLICATION MODE = CASE2-SIMILAR-USER EXAPANSION (COMPLETED IN %d seconds)"%(time() - t) + "="*5 )
 
-	# print out summary with file path and purpose of output files
-
+	logger.info("TOTAL EXECUTION TOOK %d SECONDS TO COMPLETE (MODE = %s)"%(time() - t_start, app_mode) )
 
 	
 class myapp():

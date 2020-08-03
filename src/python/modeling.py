@@ -98,7 +98,6 @@ def get_labels(user_path, raw_label_name, label_eval):
 def plot_coefficients(feature_names, coef, coef_topK, fig_path_coef, save_fig):
     pref_id_map = {}
     for i, col in enumerate(feature_names):
-    #print(col)
         if "bucket" in col:
             col_prefix, col_bid = col.split("_bucket_")
         else:
@@ -118,7 +117,6 @@ def plot_coefficients(feature_names, coef, coef_topK, fig_path_coef, save_fig):
     xlim = [-2.0, 3.0]
     i = 0
     for pref, ids in pref_id_map.items():
-    #print(pref, min(ids), max(ids))
         if i < len(pref_id_map):
             plt.plot(xlim, [max(ids) +0.5, max(ids)+0.5], color="gray")
             #plt.text( 2.3, (min(ids) + max(ids))/2.0, i)

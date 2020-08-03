@@ -56,10 +56,6 @@ class PreProcessing:
         # apply bukcetization
         cur_buckets = model_buckets_df.loc["buckets", model_buckets_df.loc["source"] == "user"].dropna()
         cur_cols = list(cur_buckets.keys())
-        #cur_cols = list(model_buckets_df.loc[:,model_buckets_df.loc["source"] == "user"].columns)
-        #cur_cols = cur_buckets.columns
-        print("here is ok")
-        # first process dictionary columns
         processed_prefix = set()
         dict_cols = {}
         for col in cur_cols:
@@ -77,7 +73,6 @@ class PreProcessing:
             if "-" not in col:
                 if "_derive" in col:
                     col_true, operator = col.split("_derive_")[0], col.split("_derive_")[1]
-                    print(col, operator)
                     bucket_list = cur_buckets[col]
                     def get_bucket_id(inval, bucket_list):
                             for i in range(len(bucket_list) - 1):
@@ -96,12 +91,10 @@ class PreProcessing:
                         cur_df= get_bucketized_df_list_col(self.logger, df, cur_buckets, col_to_bucketize)
                         print_and_log_sparsity(cur_df, self.logger)
                     elif col_type in [np.int64, np.int32, np.float64, np.float32]:
-                        print("here2")
-                        print(cur_buckets[col])
                         cur_df = get_bucket_df(df, col, cur_buckets[col])
                         print_and_log_sparsity(cur_df, self.logger)
                     else:
-                        print("ERROR, NOT CAPTURED, COL = ", col)
+                        self.logger.info("ERROR, NOT CAPTURED, COL = ", col)
 
                 joined =pd.concat([joined, cur_df], axis = 1)
         self.logger.info("Pre-Processing Completed - writing output started, output path = %s"%output_path_all_data)
@@ -222,7 +215,6 @@ def print_and_log_sparsity(elite_year_df, logger):
         logger.info("%30s | %20d | %20d | %17.3f"%(col, nrecords, nonzero, perc_nonzero))
 
 def get_bucket_df(df, col_to_bucketize, bucket_list):
-    print(col_to_bucketize)
     bucket_tuple =  pd.cut(df[col_to_bucketize], bucket_list,
         labels=False, retbins=True, right=False, duplicates='drop')
 

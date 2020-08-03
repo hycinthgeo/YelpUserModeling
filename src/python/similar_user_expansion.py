@@ -32,19 +32,19 @@ class similarUserExpansion:
         temp['friends_count'] = temp['friends'].apply(
 		    lambda x: len(x.split(",")))
 
-        print("Total users = %d" % (len(temp)))
+        self.logger.info("Total users = %d" % (len(temp)))
         myfilter = [True for x in range(len(temp))]
         for col in model_config.columns:
         	if col != "target_num_users":
         		min_val = model_config[col][0]
         		max_val = model_config[col][1]
         		myfilter = myfilter & (temp[col] >= min_val) & (temp[col] <= max_val)
-        		print("Filter field = %20s,   range = [%5s, %5s],   post-filter records = %d" %
+        		self.logger.info("Filter field = %20s,   range = [%5s, %5s],   post-filter records = %d" %
 				 (col, str(min_val), str(max_val), len(temp[myfilter])))
 
         temp = temp[myfilter]
         num_exact_match = len(temp)
-        print("Exact-match users = %d" % (num_exact_match))
+        self.logger.info("Exact-match users = %d" % (num_exact_match))
 
         if num_exact_match >= target_total_audience:
             out_df.to_csv(output_user_list, index=False)
@@ -55,7 +55,7 @@ class similarUserExpansion:
         est_K = (target_total_audience // num_exact_match + 1) * \
             2  # to be more conservative
         X = alldata.values
-        print("Estimated K-nearest neighbors, K = %d" % est_K)
+        self.logger.info("Estimated K-nearest neighbors, K = %d" % est_K)
         nbrs = NearestNeighbors(n_neighbors=est_K, algorithm='ball_tree').fit(X)
         distances, indices = nbrs.kneighbors(X)
 
