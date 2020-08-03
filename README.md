@@ -24,7 +24,6 @@ $ cd YelpUserModeling/
 ## Run Applications with Two Use Cases
 The application supported various modes, and allows developers to either run the full application, or start from a major stage, in order to reduce the turn-around for bulk experiments. 
 
-### Commands and descriptions 
 | Commands | Descriptions |
 | ------------- | ------------- |
 | python main.py  | Run the full application incl. all the following modes, took approximately 80s for my Linux workstation  |
@@ -34,24 +33,43 @@ The application supported various modes, and allows developers to either run the
 |python main.py mode="prediction"| Use case 1 - prediction upon the test data, and output scores both from the console and the [`logs/info.log`](https://github.com/hycinthgeo/YelpUserModeling/blob/master/logs/info.log)|
 |python main.py mode="similar-users"| Use case 2 - filter to get the seed users that exactly match the restaurant owner's creteria, as specified in [`config/modelConfig-case2.json`](https://github.com/hycinthgeo/YelpUserModeling/blob/master/configs/modelConfig-case2-default.json), and then expand to get a pool of more audiences using Neareast Neighbor and re-rank. A simple user interface is available as [`UI-case2.ipynb`](https://github.com/hycinthgeo/YelpUserModeling/blob/master/UI-case2.ipynb).
 
-### Example of my successful implementations
+## Example of my successful implementations
 * [Link of info.log to show full-mode succesfful execution](https://github.com/hycinthgeo/YelpUserModeling/blob/master/logs/info.log)
 * [Link of PDF file to show simple UI for Case 1](https://github.com/hycinthgeo/YelpUserModeling/blob/master/docs/UI-case1.pdf)
 * [Link of PDF file to show simple UI for Case 2](https://github.com/hycinthgeo/YelpUserModeling/blob/master/docs/UI-case2.pdf)
 
 ## Use Case 1
-In this use case, I aimes at facilitate business strategies to understand who and why tends to give high-star reviews. Motivated by the model performance and the interpretability of the Logistic Regression (LR) model, herein, I choose the hyper-parameter `C`=0.1, as it has both good training and validation [`roc_auc` score](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.roc_auc_score.html#sklearn.metrics.roc_auc_score).
+In this use case, I aimes at facilitate business strategies to understand who and why tends to give high-star reviews (average_stars >=4 for this given user). Motivated by the model performance and the interpretability of the Logistic Regression (LR) model, herein, I choose the hyper-parameter `C`=0.1, as it has both good training and validation [`roc_auc` score](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.roc_auc_score.html#sklearn.metrics.roc_auc_score).
 
-<figure class="image">
-  <img src="{{ include.url }}" alt="{{ include.description }}">
-  <figcaption>{{ include.description }}</figcaption>
-</figure>
 ![alt text](https://github.com/hycinthgeo/YelpUserModeling/blob/master/results/tuning-C-case1-default.png?raw=true)
-<p>
-    <img src="https://github.com/hycinthgeo/YelpUserModeling/blob/master/results/tuning-C-case1-default.png" alt>
-</p>
-<p>
-    <em>Tuning hyper-parameter `C` for Logistic Regression/em>
-</p>
 
-and what the final model coefficients tell. 
+Figure blow shows the coefficients of the LR model.
+![alt text](https://github.com/hycinthgeo/YelpUserModeling/blob/master/results/coef-case1-default.png?raw=true)
+
+Here are my interpretations based on the above observations on the model coefficients. 
+* "votes" plays the most dramatic role in how likely an user give high/low-star reviews; more votes on "funny" (also more votes on "useful") lead to a tendency to give low stars, that's probably because the other users feel this user's review more useful when it's negative-trending; in comparison, more votes on "cool" lead to increasing tendency to give high-star reviews
+* this observations on "votes" aligns well with "compliments"
+* In addition, increasing review_counts are negatively correlated with high-star reviewers, and increasing friends (or fans) are positively correlated with high-star reviewers.
+* Some other features play less significant role, such as "elite" (elite_year), and "compliments-cute"
+
+## Use Case 2
+In this use case, restaurant owner can describe the ideal Yelp users that he/she would like to reach out to and how many users they would like to finally reach in this [`modelConfig-case1.json`](https://github.com/hycinthgeo/YelpUserModeling/blob/master/configs/modelConfig-case2-default.json). In many cases, the `exact-matched` Yelp users are smaller than the desired quantity of Yelp users that a restaurant owner would like their Ads to reach; therefore, I further applied Nearest Neighbors and then re-rank based on the distance to reach the descired Yelp user target size. 
+
+As shown in this example ([page #3 of this UI-case2 PDF](https://github.com/hycinthgeo/YelpUserModeling/blob/master/docs/UI-case2.pdf)), we 
+
+* we disconvered 10s of additional users to reach the desired size of the candidate pool (i.e. 100 in this case for fast compute). More specifically, an user whose raw user attributes is almost the same as the desired exact-matched user, besides the year that he/she joined Yelp. 
+* the full [list of recommended users with user sources (i.e. exact match or expanded)](https://github.com/hycinthgeo/YelpUserModeling/blob/master/results/recommended_user_list.csv) can now supplies to the restaurant owner, to let him/her to understand how the system has decided to further targeting for interactive feedback. 
+
+## Engineering Considerations 
+After my initial completion of this project via Jupyter Notebook, I utilized the remaining week to improve the engineering side of this project. 
+For instance, now we can 
+* check important statistics of the model, and runtime in the [`logs/info.log`](https://github.com/hycinthgeo/YelpUserModeling/blob/master/logs/info.log); these information can further help the modeler to decide how to improve their feature transformation or model hyperparameters. 
+* leverage the reproducible scheme to convininiently select different features and apply various transformations, following the example of this [configs/tranformer-default.config](https://github.com/hycinthgeo/YelpUserModeling/blob/master/configs/transformer-default.json)
+* conveniently manage model versions, by creating new model files ([configs/modelConfig-case1.json](https://github.com/hycinthgeo/YelpUserModeling/blob/master/configs/modelConfig-case1-default.json), [configs/modelConfig-case2.json](https://github.com/hycinthgeo/YelpUserModeling/blob/master/configs/modelConfig-case2-default.json)), and change the model path in this [configs/data-pipeline.json](https://github.com/hycinthgeo/YelpUserModeling/blob/master/configs/data-pipeline.json). 
+* for modelers, one is welcome to extend more transformer (now supports bucketization and eval()) and model varieties (now supports Logistic Regresssion, Nearest Neighbor); while even though with minimum efforts, he or she can easily further improve model quality by feature engineering and model parameter changes.  
+
+## Conclusion
+In this final project, 
+* as planned, I explored user entity to find an insightful use case 
+* beyond the mileage, I discovered two insightful use cases, which ideally would benefit business strategies (use case 1) and restaurant owner (use case2) 
+* for engineering contributions, the scheme I developed above could benefit modelers as well, as it can be swiftly utilized to conduct bulk experiments to improve model quality, and is extensible to support more models. 
